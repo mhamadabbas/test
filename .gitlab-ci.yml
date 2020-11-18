@@ -1,0 +1,19 @@
+image: node:latest
+
+stages:
+  - check
+  - build
+
+before_script:
+    - npm install
+    - npm install jscpd genese
+
+quality:
+  stage: check
+  script:
+    - npm run quality
+
+test:
+  stage: check
+  script:
+    - npm run test
